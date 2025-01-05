@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/gif" href="images/elements/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Choose a font from https://fonts.google.com/ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <!--Here is the link to the font used in the title-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <!--Here is the link to the particles.js library-->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <!--Here is the link to the photogrid.js file-->
+    <script src="photogrid.js"></script>
+    
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="trees-container" aria-hidden="true">
+        <!-- 4th Row Trees (Back) -->
+        <svg class="tree-4thRow" role="img" aria-label="Decorative background tree layer 4">
+            <image href="images/elements/Trees4.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        <svg class="tree-4thRow" role="img" aria-label="Decorative background tree layer 4">
+            <image href="images/elements/Trees4.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        
+        <!-- 3rd Row Trees -->
+        <svg class="tree-3rdRow" role="img" aria-label="Decorative background tree layer 3">
+            <image href="images/elements/Trees3.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        <svg class="tree-3rdRow" role="img" aria-label="Decorative background tree layer 3">
+            <image href="images/elements/Trees3.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        
+        <!-- 2nd Row Trees -->
+        <svg class="tree-2ndRow" role="img" aria-label="Decorative background tree layer 2">
+            <image href="images/elements/Trees2.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        <svg class="tree-2ndRow" role="img" aria-label="Decorative background tree layer 2">
+            <image href="images/elements/Trees2.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        
+        <!-- 1st Row Trees (Front) -->
+        <svg class="tree-1stRow" role="img" aria-label="Decorative background tree layer 1">
+            <image href="images/elements/Trees1.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+        <svg class="tree-1stRow" role="img" aria-label="Decorative background tree layer 1">
+            <image href="images/elements/Trees1.svg" width="100%" height="100%" preserveAspectRatio="xMidYMax slice"/>
+        </svg>
+    </div>
+
+    <header class="header">
+        <div class="language-toggle">
+            <button onclick="toggleLanguage()" class="lang-btn">
+                <span class="lang-text" data-en="日本語" data-ja="English">日本語</span>
+            </button>
+        </div>
+        <div class="title-section">
+            <h1 data-en="Happy New Year!" data-ja="Happy New Year!" style="font-family: 'Snowburst One', cursive !important;">Happy New Year!</h1>
+            <h2 data-en="The Sanos wish you a joyful start to 2025 filled with &lt;br class='mobile-break'&gt;exciting new adventures and wonderful beginnings!" 
+               data-ja="明けましておめでとうございます。&lt;br class='mobile-break'&gt;昨年はたいへんお世話になりました。
+本年も平穏な年になりますよう&lt;br class='mobile-break'&gt;お祈り申し上げます。">The Yamadas wish you a joyful start to 2025 filled with exciting new adventures and wonderful beginnings!</h2>
+            <p class="greetings" data-en="Shin, Yumiko, Iris, Tsukasa, and Koh" 
+               data-ja="山田　太郎、花子、一郎、二郎、三郎">Taro, Hanako, Ichiro, Jiro, and Saburo</p>
+            <p class="tap-hint" data-en="Tap images to see descriptions" 
+               data-ja="画像をタップするとキャプションが表示されます">Tap images to see descriptions</p>
+        </div>
+    </header>
+
+    <div class="hero-container">
+        <img src="images/placeholders/hero_image.png" alt="Hero Image" class="hero-image">
+    </div>
+
+    <main class="content">
+        <div class="grid">
+            <div class="grid-sizer"></div>
+            
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_1.png" alt="image 1">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_1" data-ja="イメージ１">image_1</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_2.png" alt="image 2">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_1" data-ja="イメージ１">image_2</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_3.png" alt="image 3">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_3" data-ja="イメージ3">image_3</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_4.png" alt="image 4">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_4" data-ja="イメージ4">image_4</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_5.png" alt="image 5">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_5" data-ja="イメージ 5">image_5</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_6.png" alt="image 6">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_6" data-ja="イメージ 6">image_6</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_7.png" alt="image 7">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_7" data-ja="イメージ 7">image_7</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_8.png" alt="image 8">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_8" data-ja="イメージ 8">image_8</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_9.png" alt="image 9">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_9" data-ja="イメージ 9">image_9</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_10.png" alt="image 10">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_10" data-ja="イメージ 10">image_10</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_11.png" alt="image 11">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_11" data-ja="イメージ 11">image_11</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_12.png" alt="image 12">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_12" data-ja="イメージ 12">image_12</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_13.png" alt="image 13">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_13" data-ja="イメージ 13">image_13</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_14.png" alt="image 14">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_14" data-ja="イメージ 14">image_8</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_15.png" alt="image 15">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_15" data-ja="イメージ 15">image_15</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-inner">
+                    <div class="grid-item-front">
+                        <img src="images/placeholders/image_16.png" alt="image 16">
+                    </div>
+                    <div class="grid-item-back">
+                        <div class="caption">
+                            <h3 data-en="Image_16" data-ja="イメージ 16">image_16</h3>
+                            <p data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." data-ja="吾輩は猫である。名前はまだ無い。
+                            どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+    <div class="contact-form">
+        <h3 data-en="Leave a Message for the Sanos" data-ja="山田家へのメッセージ">Leave a Message for the Sanos</h3>
+        <form name="contact" netlify netlify-recaptcha>
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="name" placeholder="Your Name" data-en-placeholder="Your Name" data-ja-placeholder="お名前" required>
+            <textarea name="message" placeholder="Your Message" data-en-placeholder="Your Message" data-ja-placeholder="メッセージ" required></textarea>
+            <div data-netlify-recaptcha="true"></div>
+            <button type="submit" data-en="Send Message" data-ja="送信">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

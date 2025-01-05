@@ -1,0 +1,782 @@
+/* General styling */
+html, body {
+    height: auto;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, rgb(214, 151, 230), rgb(183, 214, 203));
+    position: relative;
+    z-index: 0;
+}
+
+/* Override all h1 styles */
+h1,
+header h1,
+.title-section h1,
+h1[data-en],
+h1[data-ja],
+.header h1 {
+    font-family: 'Playball', serif !important;
+    /* rest of your styles */
+}
+
+h2 {
+    white-space: pre-line;
+}
+
+.cls-1 {
+    fill: #000;
+}
+
+#Layer_1 {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tree rows styling */
+.trees-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* 4th Row (最背面) */
+.tree-4thRow {
+    position: fixed;
+    bottom: 0;
+    left: -15%;
+    height: 110vh;
+    width:  50%;
+}
+.tree-4thRow:nth-child(2) {
+    left: 60%;
+}
+
+/* 3rd Row */
+.tree-3rdRow {
+    position: fixed;
+    height: 100vh;
+    left: -10%;
+    width: 60%;
+}
+.tree-3rdRow:nth-child(4) {
+    left: 45%;
+}
+
+/* 2nd Row */
+.tree-2ndRow {
+    position: fixed;
+    height: 110vh;
+    left: -20%;
+    width: 70%;
+}
+.tree-2ndRow:nth-child(6) {
+    left: 45%;
+}
+
+/* 1st Row (最前面) */
+.tree-1stRow {
+    position: fixed;
+    height: 170vh;
+    left: -20%;
+    width: 80%;
+}
+.tree-1stRow:nth-child(8) {
+    left: 30%;
+}
+
+.tree-1stRow image {
+    filter: invert(95%) sepia(8%) saturate(2976%) hue-rotate(210deg) brightness(46%) contrast(90%);
+    /* Creates light purple - closest to rgb(229, 221, 239) */
+}
+
+.tree-2ndRow image {
+    filter: invert(88%) sepia(13%) saturate(936%) hue-rotate(210deg) brightness(55%) contrast(87%);
+    /* Creates medium purple - closest to rgb(211, 194, 227) */
+}
+
+.tree-3rdRow image {
+    filter: invert(87%) sepia(9%) saturate(978%) hue-rotate(210deg) brightness(66%) contrast(87%);
+    /* Creates darker purple - closest to rgb(212, 194, 226) */
+}
+
+.tree-4thRow image {
+    filter: invert(85%) sepia(11%) saturate(989%) hue-rotate(210deg) brightness(88%) contrast(85%);
+    /* Creates darkest purple - closest to rgb(207, 181, 224) */
+}
+
+/* Ensure SVG inherits colors */
+.tree-1stRow svg, 
+.tree-2ndRow svg, 
+.tree-3rdRow svg, 
+.tree-4thRow svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.5);
+    fill: inherit;
+}
+
+/* Header styling */
+.header {
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    background: linear-gradient(90deg, rgba(68, 22, 79, 0.7), rgba(12, 54, 75, 0.7)); /* Match your background color */
+    z-index: 500; /* Ensure it stays above other content */
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 7rem;
+    font-family: Playball", system-ui;
+    font-weight: 300;
+    text-shadow: 0 0 1px #fffaed,
+                 0 0 5px #55134b,
+                 0 0 15px #370429;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: rem 0;
+    color: #f0e5da;
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+header h2 {
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-family: "Shantell Sans", cursive;
+    font-weight: 300;
+    font-style: normal;
+    text-shadow: 0 0 1px #423515,
+                 0 0 5px #423515,
+                 0 0 15px #423515;
+    text-align: center; /* Center the title text */
+    margin-top: rem1; /* Remove any default margins */
+    padding: rem 0; /* Add padding for spacing */
+    color: #b3f2ff;
+}
+
+.title-section p {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    font-family: "Parkinsans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; /* Center the title text */
+    margin: 5; /* Remove any default margins */
+    padding: rem 0; /* Add padding for spacing */
+    color: #ffffff;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+        color: #fffaed;
+        margin-top: 2.5rem;
+    }
+
+    header h2 {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        color: #9cebf6;
+    }
+
+    .title-section p {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+        color: #d7d7d7;
+    }
+}
+
+/* Title section */
+.title-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding for small screens */
+}
+
+/* Main content styling */
+.content {
+    padding: 0rem 1rem 2rem 1rem; /* top right bottom left - reduced top padding */
+    position: relative; /* Ensure content overlays particles */
+    z-index: 2;
+}
+
+.grid {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base grid layout */
+.grid-sizer,
+.grid-item {
+    width: calc(33.333% - 6px); /* Account for gutters */
+    padding: 6px 3px; /* Increased vertical padding (top/bottom: 6px, left/right: 3px) */
+    box-sizing: border-box;
+}
+
+.grid-item {
+    position: relative;
+    perspective: 1000px;
+    margin-bottom: 0;
+}
+
+.grid-item.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.grid-item-inner {
+    position: relative;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    margin-bottom: 0;
+}
+
+.grid-item:hover .grid-item-inner {
+    transform: none;
+}
+
+.grid-item-front,
+.grid-item-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 8px; /* Match the image border-radius */
+}
+
+.grid-item-front {
+    position: relative; /* Keep this relative for proper sizing */
+}
+
+.grid-item-back {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0; /* Remove padding to match front size exactly */
+}
+
+.grid-item-back .caption {
+    padding: 20px;
+    color: white; /* Make text visible against dark background */
+}
+
+.grid-item-back .caption h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    font-family: "Shantell Sans", cursive;
+}
+
+.grid-item-back .caption p {
+    margin: 0;
+    font-size: 1em;
+    font-family: "Parkinsans", sans-serif;
+    line-height: 1.4;
+}
+
+.grid-item-back .caption p[data-ja] {
+    font-size: 0.9em;  /* Makes Japanese text 90% of the original size */
+    line-height: 1.6;  /* Slightly increased line height for better readability */
+}
+
+.grid-item img {
+    display: block;
+    width: 100%;
+    height: auto; /* Change back to auto to maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.grid:after {
+    display: none;
+}
+
+.grid-item video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.grid-item-front video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.grid-item-front video.portrait {
+    object-fit: contain;
+    aspect-ratio: 9/16;
+}
+
+@media (max-width: 1024px) {
+    .grid-sizer,
+    .grid-item {
+        width: calc(33.333% - 6px);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-sizer,
+    .grid-item {
+        width: calc(50% - 6px);
+        padding: 3px; /* Return to smaller padding for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
+        padding: 3px; /* Keep smaller padding for mobile */
+    }
+
+    .grid-item {
+        margin-bottom: 2px; /* Even smaller gap for mobile */
+    }
+    
+    .grid-item-inner {
+        margin-bottom: 5px; /* Smaller margin for mobile */
+    }
+}
+
+/* Card styling */
+.card {
+    position: relative;
+    width: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-inner {
+    width: 100%;
+    height: auto; /* Allow dynamic height */
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Flip Effect */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Front Face (Image) */
+.card-front img {
+    width: 100%;
+    height: auto; /* Maintain original aspect ratio */
+    object-fit: cover;
+}
+
+/* Back Face (Caption) */
+.card-back {
+    background-color: rgba(12, 20, 74, 0.9);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+/* Language toggle styling */
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Parkinsans", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Language-specific styling */
+[data-ja] {
+    font-family: "IBM Plex Sans JP", serif !important;
+    font-weight: 400;
+    font-style: normal;
+    white-space: pre-wrap;
+}
+
+h1[data-ja],
+h2[data-ja],
+.greetings[data-ja],
+.grid-item-back .caption h3[data-ja],
+.grid-item-back .caption p[data-ja],
+.lang-btn[data-ja],
+.title-section h1[data-ja],
+.title-section h2[data-ja],
+.title-section p[data-ja] {
+    font-family: "IBM Plex Sans JP", serif !important;
+}
+
+h1[data-en] {
+    font-family: "Plauball", system-ui;
+}
+
+h2[data-en] {
+    font-family: "Shantell Sans", cursive;
+}
+
+.greetings[data-en] {
+    font-family: "Parkinsans", sans-serif;
+}
+
+.grid-item-back .caption h3[data-en] {
+    font-family: "Shantell Sans", cursive;
+}
+
+.grid-item-back .caption p[data-en] {
+    font-family: "Parkinsans", sans-serif;
+}
+
+/* Particles.js styling */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+    background-color: transparent;
+    /*animation: day-night-cycle 60s infinite;  Adjust duration as needed */
+    /*filter: hue-rotate(0deg) brightness(1) saturate(1);  Initial filter state */
+}
+
+/* Add media query for non-touch devices only */
+@media (hover: hover) {
+    .grid-item:hover .grid-item-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Add loading state styles */
+.grid.is-loading {
+    opacity: 0;
+}
+
+.grid {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+/* Ensure grid items maintain aspect ratio */
+.grid-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-out;
+}
+
+.grid-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Force aspect ratio for videos */
+.grid-item-front video {
+    min-height: 200px; /* Set a minimum height */
+    background-color: rgba(0, 0, 0, 0.1); /* Placeholder color */
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.grid-item-inner {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.grid-item video {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item video.loaded {
+    opacity: 1;
+}
+
+.grid:not(.is-loading) .grid-item-inner {
+    opacity: 1;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.contact-form h3 {
+    color: #9cebf6;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: "Shantell Sans", cursive;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: "Parkinsans", sans-serif;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(156, 235, 246, 0.6);  /* #9cebf6 with transparency */
+    color: white;  /* Changed back to white */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: "Parkinsans", sans-serif;
+}
+
+.contact-form button:hover {
+    background: rgba(156, 235, 246, 0.8);  /* Slightly more opaque on hover */
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+.netlify-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.mobile-break {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-break {
+        display: inline;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 481px) {
+    header h1 {
+        font-size: 5rem;
+    }
+    
+    header h2,
+    header h2[data-en],
+    header h2[data-ja] {
+        font-size: 1.5rem;
+    }
+}
+
+/* Add new media query for landscape mobile */
+@media (max-width: 926px) and (orientation: landscape) {
+    header h1 {
+        font-size: 3rem;
+        margin-top: 1rem;
+    }
+    
+    /* Add language toggle button positioning for landscape */
+    .language-toggle {
+        position: fixed;
+        top: 10px; /* Reduced from 20px */
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    header h2,
+    header h2[data-en],
+    header h2[data-ja] {
+        font-size: 1.2rem;
+    }
+
+    .title-section p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+        color: #fffaed;
+        margin-top: 2.5rem;
+    }
+}
+
+.tap-hint {
+    display: none;
+    text-align: center;
+    color: #9cebf6 !important;
+    font-size: 0.6rem !important;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    font-family: "Parkinsans", sans-serif;
+}
+
+@media (max-width: 480px) {
+    .tap-hint {
+        display: block;
+    }
+}
+
+.grid-item {
+    opacity: 1;
+}
+
+.grid-item-inner {
+    opacity: 1;
+}
+
+.grid-item-front {
+    opacity: 1;
+}
+
+.grid-item-front video.portrait-480x685 {
+    object-fit: cover;
+    aspect-ratio: 4/5;  /* 480:600 simplified to 4:5 */
+}
+
+/* Safari-specific fixes */
+.grid-item video {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item video.loaded {
+    opacity: 1;
+}
+
+/* Force hardware acceleration for Safari */
+.grid-item-inner {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Ensure proper stacking context in Safari */
+.grid-item {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+/* Base grid layout */
+.grid {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .grid {
+        margin: 0 1rem; /* Add margins on mobile */
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: calc(100% - 12px); /* Adjust width to account for margins */
+        padding: 6px;
+    }
+}
+
+/* For slightly larger mobile devices */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grid {
+        margin: 0 1.5rem; /* Slightly larger margins for larger devices */
+    }
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    padding: 0;  /* Removed padding */
+    box-sizing: border-box;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Add responsive padding for mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
